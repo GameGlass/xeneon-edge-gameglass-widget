@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GameGlass</title>
+  <link rel="icon" type="image/svg+xml" href="resources/icon.svg">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <iframe
+    id="gg"
+    allow="autoplay; fullscreen"
+  ></iframe>
+  <div id="error">
+    Unable to load GameGlass.<br>Check your connection.
+  </div>
+
+  <script>
+    icueEvents = {
+      "onICUEInitialized": init
+    };
+
+    const frame = document.getElementById('gg');
+    const err   = document.getElementById('error');
+
+    frame.addEventListener('error', () => {
+      frame.style.display = 'none';
+      err.style.display   = 'block';
+    });
+
+    function init() {
+      frame.style.display = 'block';
+      frame.src = 'https://app.gameglass.gg';
+    }
+
+    if (typeof iCUE_initialized !== 'undefined' && iCUE_initialized) {
+      init();
+    }
+  </script>
+</body>
+</html>
