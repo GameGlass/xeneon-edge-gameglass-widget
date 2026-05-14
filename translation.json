@@ -1,3 +1,7 @@
 {
-  "GameGlass": "GameGlass"
+  "en": {
+    "translation": {
+      "GameGlass": "GameGlass"
+    }
+  }
 }

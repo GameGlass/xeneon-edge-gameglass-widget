@@ -6,13 +6,14 @@
   "version": "1.0.0",
   "preview_icon": "resources/icon.svg",
   "min_framework_version": "1.0.0",
+  "interactive": true,
   "os": [
     {
       "platform": "windows"
     }
   ],
   "supported_devices": [
-   { "type": "dashboard_lcd" },
+    { "type": "dashboard_lcd" },
     { "type": "keyboard_lcd" },
     { "type": "pump_lcd" }
   ]

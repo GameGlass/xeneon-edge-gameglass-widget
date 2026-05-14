@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GameGlass</title>
-  <link rel="icon" type="image/svg+xml" href="resources/icon.svg">
+  <title>tr('GameGlass')</title>
+<link rel="icon" type="image/svg+xml" href="resources/icon.svg">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -23,15 +23,48 @@
     const frame = document.getElementById('gg');
     const err   = document.getElementById('error');
 
+    const DESIGN_H = 900;
+
     frame.addEventListener('error', () => {
       frame.style.display = 'none';
       err.style.display   = 'block';
     });
 
+    function scaleToFit() {
+      const h = window.innerHeight || 600;
+      const w = window.innerWidth  || 800;
+
+      if (h < DESIGN_H) {
+        const scale = h / DESIGN_H;
+        frame.style.position = 'absolute';
+        frame.style.top      = '0';
+        frame.style.left     = '0';
+        frame.style.bottom   = 'auto';
+        frame.style.right    = 'auto';
+        frame.style.width    = Math.ceil(w / scale) + 'px';
+        frame.style.height   = DESIGN_H + 'px';
+        frame.style.zoom     = String(scale);
+      } else {
+        frame.style.position = 'fixed';
+        frame.style.top      = '0';
+        frame.style.left     = '0';
+        frame.style.bottom   = '0';
+        frame.style.right    = '0';
+        frame.style.width    = '';
+        frame.style.height   = '';
+        frame.style.zoom     = '1';
+      }
+    }
+
     function init() {
       frame.style.display = 'block';
+      scaleToFit();
       frame.src = 'https://app.gameglass.gg';
     }
+
+    window.addEventListener('resize', function() {
+      if (frame.style.display !== 'none') scaleToFit();
+    });
 
     if (typeof iCUE_initialized !== 'undefined' && iCUE_initialized) {
       init();
