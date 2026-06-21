@@ -1,7 +1,7 @@
 # Xeneon Edge GameGlass Widget
 
-> [!IMPORTANT]
-> GameGlass Hub has released an Overlay that works on the same PC without affecting your game's focus.  [Get version 8.0.0 now to see it in all its glory](https://gameglass.gg/download) (or just update your Hub)! 
+> [!CAUTION]
+> [GameGlass Hub has released an Overlay](https://updates.gameglass.gg/changelog/gameglass-80-release) that works on the same PC without affecting your game's focus.  [Get version 8.0.0 now to see it in all its glory](https://gameglass.gg/download) (or just update your Hub)! No iCUE needed - Just GameGlass.
 
 > [!IMPORTANT]
 > As of iCUE 5.46.67, there is a problem in Widget mode stealing the focus away from the game/windows you're currently on.  This means that keybinds setup in GameGlass will not reach the game correctly.  Corsair says this will be fixed in the next update slated for July 13th. 
